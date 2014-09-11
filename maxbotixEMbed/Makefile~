@@ -1,0 +1,17 @@
+#include <mbed.h>
+
+#define pinTX p9
+#define pinRx p10
+
+int main()
+{   
+  printf("\r\n");
+  printf("\rDebut de la fonction main\n");
+  printf("\r\n");
+
+  
+
+  printf("\r\n");
+  printf("\rFin du match et du code\n");
+  return EXIT_SUCCESS;
+}
