@@ -1,4 +1,5 @@
-LPC176x/./main.o: main.cpp \
+LPC176x/./MaxbotixDriver/sonar.o: MaxbotixDriver/sonar.cpp \
+ MaxbotixDriver/sonar.h \
  /home/tlegrand/Documents/Robotik/gcc4mbed-master/external/mbed/mbed.h \
  /home/tlegrand/Documents/Robotik/gcc4mbed-master/external/mbed/platform.h \
  /home/tlegrand/Documents/Robotik/gcc4mbed-master/external/mbed/LPC1768/device.h \
@@ -64,6 +65,8 @@ LPC176x/./main.o: main.cpp \
  /home/tlegrand/Documents/Robotik/gcc4mbed-master/external/mbed/gpio_irq_api.h \
  /home/tlegrand/Documents/Robotik/gcc4mbed-master/external/mbed/wait_api.h \
  /home/tlegrand/Documents/Robotik/gcc4mbed-master/external/mbed/rtc_time.h
+
+MaxbotixDriver/sonar.h:
 
 /home/tlegrand/Documents/Robotik/gcc4mbed-master/external/mbed/mbed.h:
 

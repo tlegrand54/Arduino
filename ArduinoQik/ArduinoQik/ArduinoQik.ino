@@ -6,6 +6,10 @@ PololuQik2s9v1 qik(4, 5, 2);
 int numError = 3;
 int numReset = 2;
 
+/**
+ * \brief Boucle d'initialisation 
+ */
+
 void setup()
 {
   Serial.begin(115200);
@@ -16,6 +20,10 @@ void setup()
   qik.init(9600);  
 }
 
+
+/**
+ *\brief Boucle principale du programme
+ */
 void loop()
 {
   Serial.println(qik.getErrors(),HEX);

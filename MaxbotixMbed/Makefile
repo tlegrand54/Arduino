@@ -1,4 +1,4 @@
-PROJECT=maxbotixEMbed
+PROJECT=MaxbotixMbed
 
 include $(GCC4MBED_DIR)/build/gcc4mbed.mk
 
