@@ -1,1 +1,5 @@
 .d
+LPC176x/
+*.bin
+*.hex
+*.elf
