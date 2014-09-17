@@ -3,3 +3,4 @@ LPC176x/
 *.bin
 *.hex
 *.elf
+Makefile
