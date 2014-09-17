@@ -9,17 +9,13 @@ int main()
     Sonar sonar(pinPW, t);
 
     printf("\r\n");
-    printf("\rDebut de la fonction main\n");
+    printf("Début de la fonction main\n");
     while(1){
 
-        /**
-         * Attention ce n'est pas des centimètres
-         */
-
-        printf("%d\n", int(sonar)); /**< on utilise l'operateur int redéfini dans la class Sonar*/
+        printf("Mesure : %d cm \n", int(sonar)); /**< on utilise l'opérateur int redéfini dans la classe Sonar*/
 
         printf("\r\n");
-        wait_us(1000);
+        wait_ms(1000);
     }
 }
 
