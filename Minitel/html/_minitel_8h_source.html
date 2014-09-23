@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.8"/>
+<title>Minitel:  Fichier source de Minitel.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Minitel
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.8 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Minitel.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_minitel_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef MINITEL_H_</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define MINITEL_H_</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;PololuQik2/PololuQik2.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;mbed.h&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="_minitel_8h.html#acdf53b44b1e92d3c6294f0b0be5739e3">    7</a></span>&#160;<span class="preprocessor">#define AMOTEURD 27</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="_minitel_8h.html#a66e4a1cae19795b2dc6c14b6b76a9801">    8</a></span>&#160;<span class="preprocessor">#define AMOTEURG 32</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="_minitel_8h.html#a786519465d0619b64e9653c746009feb">    9</a></span>&#160;<span class="preprocessor">#define RMOTEURD -27</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="_minitel_8h.html#a1231f1e700a51ec07ee13d16fc87463d">   10</a></span>&#160;<span class="preprocessor">#define RMOTEURG -27</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_minitel.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_minitel.html">Minitel</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    PololuQik2 qik;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">int</span> cptStack=0, cptPosition=0, angleGo=0;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> seuilStack(<span class="keywordtype">int</span> isLeft);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_minitel.html#ac09166bcb1a9c382270cbcec40ae899c">Minitel</a>(PinName txPin, PinName rxPin, PinName resetPin, PinName errorPin);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#a528a4c6988633a8d0e3e3c910f871792">trackLine</a>(<span class="keywordtype">double</span> rate,<span class="keywordtype">int</span> rightSensor,<span class="keywordtype">int</span> leftSensor);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#a3e6e015bca89026810f4f01a89803dc4">go</a>(<span class="keywordtype">int</span> rate);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#ac6adede52df7f8f4ee09fd3cad53d3d6">goBackward</a>(<span class="keywordtype">double</span> rate,<span class="keywordtype">int</span> rightSensor,<span class="keywordtype">int</span> leftSensor);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#a1a3750e7644df131713c245246aa3257">stopMotorLeft</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#ac4b9e081732573a37532c94812ccdea2">stopMotorRight</a>();</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#a0ada4de74f143e73f6b65653b33fb747">stopMotors</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="class_minitel.html#a53cb0f16aaa673e63366d869df8c6c99">~Minitel</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_minitel_html_ac6adede52df7f8f4ee09fd3cad53d3d6"><div class="ttname"><a href="class_minitel.html#ac6adede52df7f8f4ee09fd3cad53d3d6">Minitel::goBackward</a></div><div class="ttdeci">void goBackward(double rate, int rightSensor, int leftSensor)</div><div class="ttdoc">Fait reculer le minitel en suivant la ligne. </div><div class="ttdef"><b>Definition:</b> Minitel.cpp:59</div></div>
+<div class="ttc" id="class_minitel_html_a53cb0f16aaa673e63366d869df8c6c99"><div class="ttname"><a href="class_minitel.html#a53cb0f16aaa673e63366d869df8c6c99">Minitel::~Minitel</a></div><div class="ttdeci">~Minitel()</div><div class="ttdoc">Destructor. </div></div>
+<div class="ttc" id="class_minitel_html_a1a3750e7644df131713c245246aa3257"><div class="ttname"><a href="class_minitel.html#a1a3750e7644df131713c245246aa3257">Minitel::stopMotorLeft</a></div><div class="ttdeci">void stopMotorLeft()</div><div class="ttdoc">Stop the left motor. </div></div>
+<div class="ttc" id="class_minitel_html_a3e6e015bca89026810f4f01a89803dc4"><div class="ttname"><a href="class_minitel.html#a3e6e015bca89026810f4f01a89803dc4">Minitel::go</a></div><div class="ttdeci">void go(int rate)</div><div class="ttdoc">go without track the line </div><div class="ttdef"><b>Definition:</b> Minitel.cpp:99</div></div>
+<div class="ttc" id="class_minitel_html_ac09166bcb1a9c382270cbcec40ae899c"><div class="ttname"><a href="class_minitel.html#ac09166bcb1a9c382270cbcec40ae899c">Minitel::Minitel</a></div><div class="ttdeci">Minitel(PinName txPin, PinName rxPin, PinName resetPin, PinName errorPin)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> Minitel.cpp:3</div></div>
+<div class="ttc" id="class_minitel_html_a0ada4de74f143e73f6b65653b33fb747"><div class="ttname"><a href="class_minitel.html#a0ada4de74f143e73f6b65653b33fb747">Minitel::stopMotors</a></div><div class="ttdeci">void stopMotors()</div><div class="ttdoc">Stop the both motors. </div></div>
+<div class="ttc" id="class_minitel_html_a528a4c6988633a8d0e3e3c910f871792"><div class="ttname"><a href="class_minitel.html#a528a4c6988633a8d0e3e3c910f871792">Minitel::trackLine</a></div><div class="ttdeci">void trackLine(double rate, int rightSensor, int leftSensor)</div><div class="ttdoc">go and track the line </div><div class="ttdef"><b>Definition:</b> Minitel.cpp:19</div></div>
+<div class="ttc" id="class_minitel_html_ac4b9e081732573a37532c94812ccdea2"><div class="ttname"><a href="class_minitel.html#ac4b9e081732573a37532c94812ccdea2">Minitel::stopMotorRight</a></div><div class="ttdeci">void stopMotorRight()</div><div class="ttdoc">Stop the right motor. </div></div>
+<div class="ttc" id="class_minitel_html"><div class="ttname"><a href="class_minitel.html">Minitel</a></div><div class="ttdef"><b>Definition:</b> Minitel.h:12</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Mardi 23 Septembre 2014 22:26:04 pour Minitel par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.8
+</small></address>
+</body>
+</html>
