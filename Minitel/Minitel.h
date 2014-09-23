@@ -13,12 +13,13 @@ class Minitel
 {
 private:
     PololuQik2 qik;
+    int cptStack=0, cptPosition=0, angleGo=0;
 
     void seuilStack(int isLeft);
 
 public:
     /**
-     * \brief Initialisation de la qik pour faire bouger le robot
+     * \brief Constructor 
      *
      * \param txPin
      * \param rxPin
@@ -28,16 +29,16 @@ public:
     Minitel(PinName txPin, PinName rxPin, PinName resetPin, PinName errorPin);
 
     /**
-     * \brief Fait avancer le minitel en suivant la ligne
-     *
+     * \brief go and track the line
+     *                    
      * \param rate
-     * \param sensorRight
-     * \param sensorLeft
+     * \param sensorRight status of the right sensor
+     * \param sensorLeft status of the left sensor
      */
-    void trackLine(double rate,int sensorRight,int sensorLeft);
+    void trackLine(double rate,int rightSensor,int leftSensor);
 
     /**
-     * \brief fait avancer le robot
+     * \brief go without track the line
      *
      * \param rate
      */
@@ -47,10 +48,10 @@ public:
      * \brief Fait reculer le minitel en suivant la ligne
      *
      * \param rate
-     * \param sensorRight
-     * \param sensorLeft
+     * \param sensorRight status of the right sensor
+     * \param sensorLeft status of the left sensor
      */
-    void reculer(double rate,int sensorRight,int sensorLeft);
+    void goBackward(double rate,int rightSensor,int leftSensor);
 
     /**
      * \brief Stop the left motor
@@ -66,5 +67,10 @@ public:
      * \brief Stop the both motors
      */
     void stopMotors();
+
+    /**
+     * \brief Destructor
+     */
+    ~Minitel();
 };
 #endif

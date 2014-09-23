@@ -57,44 +57,23 @@
 /* ###################  DECLARATION DES FONCTIONS ################### */
 
 /**
- * Permet de faire descendre ou de remonter le clavier
- */
-void actionClavier(int vitesse, int tempsAttente);
-
-/**
- * Fait avancer le robot en suivant la ligne
- */
-void avancer(double rate);
-
-/**
- * Initialise les QIK au démarrage du robot pour qu'elles ne soient pas
- * en défaut
- */
-void init();
-
-/**
- * Fait reculer le robot en suivant la ligne
- */
-void reculer(double rate);
-
-/**
  * Fonction qui gére le match
  */
 void match();
 
 /**
- * Calcule et renvoie la moyenne d'un tableau
+ * \brief Calcule et renvoie la moyenne d'un tableau
+ *   
+ * \param tableau dont on souhaite la moyenne
+ * \return renvoie la moyenne du tableau en paramètre
  */
  int moyenne(int tab[]);
  
- void seuilStack(int isLeft);
- 
- // Yeah ! =)
- void iLikeToMoveItMoveIt();
- void pomPomGirl();
- 
  /**
-  * Rempli un tableau en décalant et supprimant le premier élément
+  * \brief Rempli un tableau en décalant et supprimant le premier élément
+  *
+  * \param tableeau dans lequel on souhaite rajouter un élément à la dernière position
+  * \param élément que l'on souhaite rajouter
   */
  /// tab est le tableau dans lequel il faut mettre le nouvelle elet
  /// nvlElt le nouvelle elet à mettre dans le tableau

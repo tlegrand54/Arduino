@@ -6,7 +6,7 @@ Minitel::Minitel(PinName TxPin, PinName RxPin, PinName ResetPin, PinName ErrorPi
      * Instanciation de la qik
      */
     qik = new PololuQik2(TxPin, RxPin, ResetPin, ErrorPin, NULL, true);
-    
+
     /*
      * Initialisation de la qik
      */
@@ -16,14 +16,14 @@ Minitel::Minitel(PinName TxPin, PinName RxPin, PinName ResetPin, PinName ErrorPi
     } while(qik.hasFrameError() || qik.hasDataOverrunError() || qik.hasTimeoutError());
 }
 
-Minitel::avancer(double rate,int capteurDroit,int capteurGauche)
+Minitel::trackLine(double rate,int sensorRight,int sensorLeft)
 {
     printf("\r%f : Avance\n", timeEnd.read());
 
     qik.setMotor0Speed((int)AMOTEURD*rate);
     qik.setMotor1Speed((int)AMOTEURG*rate);
 
-    if(!capteurDroit && !capteurGauche)
+    if(!sensorRight && !sensorLeft)
     {
         qik.setMotor0Speed((int)RMOTEURD*rate);
         qik.setMotor1Speed((int)RMOTEURG*rate);
@@ -32,38 +32,38 @@ Minitel::avancer(double rate,int capteurDroit,int capteurGauche)
     /*
      * Tourne à gauche
      */
-    if(!capteurDroit)
+    if(!sensorRight)
     {
         printf("\r%f : Gauche !\n", timeEnd.read());
-	if(angleGo) {
-	    cptPosition ++;
-	    seuilStack(1);
-	}
+        if(angleGo) {
+            cptPosition ++;
+            seuilStack(1);
+        }
         qik.setMotor1Speed((int)RMOTEURG*rate);
     }
 
     /*
      * Troune à droite
      */
-    if(!capteurGauche)
+    if(!sensorLeft)
     {
         printf("\r%f : Droite !\n", timeEnd.read());
         if(angleGo) {
-	    cptPosition --;
-	    seuilStack(0);
-	}
+            cptPosition --;
+            seuilStack(0);
+        }
         qik.setMotor0Speed((int)RMOTEURD*rate);
     }    
 }
 
-Minitel::reculer(double rate)
+Minitel::goBackward(double rate,int sensorRight,int sensorLeft)
 {
     printf("\r%f : Reculer\n", timeEnd.read());
 
     qik.setMotor0Speed((int)RMOTEURD*rate);
     qik.setMotor1Speed((int)RMOTEURG*rate);
 
-    if(!capteurDroit && !capteurGauche)
+    if(!sensorRight && !sensorLeft)
     {
         qik.setMotor0Speed((int)RMOTEURD*rate);
         qik.setMotor1Speed((int)RMOTEURG*rate);
@@ -72,47 +72,53 @@ Minitel::reculer(double rate)
     /*
      * Tourne à gauche
      */
-    if(!capteurDroit)
+    if(!sensorRight)
     {
         printf("\r%f : Gauche !\n", timeEnd.read());
         if(angleGo) {
-	    cptPosition ++;
-	    seuilStack(1);
-	}
+            cptPosition ++;
+            seuilStack(1);
+        }
         qik.setMotor1Speed((int)RMOTEURG*rate);
     }
 
     /*
      * Troune à droite
      */
-    if(!capteurGauche)
+    if(!sensorLeft)
     {
         printf("\r%f : Droite !\n", timeEnd.read());
         if(angleGo) {
-	    cptPosition --;
-	    seuilStack(0);
-	}
+            cptPosition --;
+            seuilStack(0);
+        }
         qik.setMotor0Speed((int)RMOTEURD*rate);
     }
+}
+
+Minitel::go(int rate)
+{
+    qik.setMotor0Speed((int)AMOTEURD*rate);
+    qik.setMotor1Speed((int)AMOTEURG*rate);
 }
 
 Minitel::seuilStack(int isLeft)
 {
     if(cptStack >= 0 && isLeft)
     {
-	++cptStack;
+        ++cptStack;
     }
     else if(cptStack <= 0 && isLeft)
     {
-	cptStack = 1;
+        cptStack = 1;
     }
     else if(cptStack >= 0 && !isLeft)
     {
-	cptStack = -1;
+        cptStack = -1;
     }
     else if(cptStack <=0 && !isLeft)
     {
-	--cptStack;
+        --cptStack;
     }
 }
 
