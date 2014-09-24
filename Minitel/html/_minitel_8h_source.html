@@ -94,45 +94,52 @@ var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="_minitel_8h.html#a786519465d0619b64e9653c746009feb">    9</a></span>&#160;<span class="preprocessor">#define RMOTEURD -27</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="_minitel_8h.html#a1231f1e700a51ec07ee13d16fc87463d">   10</a></span>&#160;<span class="preprocessor">#define RMOTEURG -27</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_minitel.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_minitel.html">Minitel</a></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    PololuQik2 qik;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">int</span> cptStack=0, cptPosition=0, angleGo=0;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> seuilStack(<span class="keywordtype">int</span> isLeft);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_minitel.html#ac09166bcb1a9c382270cbcec40ae899c">Minitel</a>(PinName txPin, PinName rxPin, PinName resetPin, PinName errorPin);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#a528a4c6988633a8d0e3e3c910f871792">trackLine</a>(<span class="keywordtype">double</span> rate,<span class="keywordtype">int</span> rightSensor,<span class="keywordtype">int</span> leftSensor);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#a3e6e015bca89026810f4f01a89803dc4">go</a>(<span class="keywordtype">int</span> rate);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#ac6adede52df7f8f4ee09fd3cad53d3d6">goBackward</a>(<span class="keywordtype">double</span> rate,<span class="keywordtype">int</span> rightSensor,<span class="keywordtype">int</span> leftSensor);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#a1a3750e7644df131713c245246aa3257">stopMotorLeft</a>();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#ac4b9e081732573a37532c94812ccdea2">stopMotorRight</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_minitel.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_minitel.html">Minitel</a></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    PololuQik2 qik;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> cptStack=0; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">int</span> cptPosition=0; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordtype">int</span> angleGo=0; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> seuilStack(<span class="keywordtype">int</span> isLeft);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <a class="code" href="class_minitel.html#ac09166bcb1a9c382270cbcec40ae899c">Minitel</a>(PinName txPin, PinName rxPin, PinName resetPin, PinName errorPin);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#a528a4c6988633a8d0e3e3c910f871792">trackLine</a>(<span class="keywordtype">double</span> rate,<span class="keywordtype">int</span> rightSensor,<span class="keywordtype">int</span> leftSensor);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#a3e6e015bca89026810f4f01a89803dc4">go</a>(<span class="keywordtype">int</span> rate);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#ac6adede52df7f8f4ee09fd3cad53d3d6">goBackward</a>(<span class="keywordtype">double</span> rate,<span class="keywordtype">int</span> rightSensor,<span class="keywordtype">int</span> leftSensor);</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#a0ada4de74f143e73f6b65653b33fb747">stopMotors</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#a1a3750e7644df131713c245246aa3257">stopMotorLeft</a>();</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="class_minitel.html#a53cb0f16aaa673e63366d869df8c6c99">~Minitel</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#ac4b9e081732573a37532c94812ccdea2">stopMotorRight</a>();</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#a0ada4de74f143e73f6b65653b33fb747">stopMotors</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#a639b72f6405e3ad29cc87073c5cd2298">rightMotor</a>(<span class="keywordtype">int</span> rate);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_minitel.html#a28dbb9b02a6a5066dc5dbdb7a0aa69ee">leftMotor</a>(<span class="keywordtype">int</span> rate);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <a class="code" href="class_minitel.html#a53cb0f16aaa673e63366d869df8c6c99">~Minitel</a>();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_minitel_html_ac6adede52df7f8f4ee09fd3cad53d3d6"><div class="ttname"><a href="class_minitel.html#ac6adede52df7f8f4ee09fd3cad53d3d6">Minitel::goBackward</a></div><div class="ttdeci">void goBackward(double rate, int rightSensor, int leftSensor)</div><div class="ttdoc">Fait reculer le minitel en suivant la ligne. </div><div class="ttdef"><b>Definition:</b> Minitel.cpp:59</div></div>
+<div class="ttc" id="class_minitel_html_a639b72f6405e3ad29cc87073c5cd2298"><div class="ttname"><a href="class_minitel.html#a639b72f6405e3ad29cc87073c5cd2298">Minitel::rightMotor</a></div><div class="ttdeci">void rightMotor(int rate)</div><div class="ttdoc">Active the right motor. </div><div class="ttdef"><b>Definition:</b> Minitel.cpp:105</div></div>
 <div class="ttc" id="class_minitel_html_a53cb0f16aaa673e63366d869df8c6c99"><div class="ttname"><a href="class_minitel.html#a53cb0f16aaa673e63366d869df8c6c99">Minitel::~Minitel</a></div><div class="ttdeci">~Minitel()</div><div class="ttdoc">Destructor. </div></div>
 <div class="ttc" id="class_minitel_html_a1a3750e7644df131713c245246aa3257"><div class="ttname"><a href="class_minitel.html#a1a3750e7644df131713c245246aa3257">Minitel::stopMotorLeft</a></div><div class="ttdeci">void stopMotorLeft()</div><div class="ttdoc">Stop the left motor. </div></div>
 <div class="ttc" id="class_minitel_html_a3e6e015bca89026810f4f01a89803dc4"><div class="ttname"><a href="class_minitel.html#a3e6e015bca89026810f4f01a89803dc4">Minitel::go</a></div><div class="ttdeci">void go(int rate)</div><div class="ttdoc">go without track the line </div><div class="ttdef"><b>Definition:</b> Minitel.cpp:99</div></div>
 <div class="ttc" id="class_minitel_html_ac09166bcb1a9c382270cbcec40ae899c"><div class="ttname"><a href="class_minitel.html#ac09166bcb1a9c382270cbcec40ae899c">Minitel::Minitel</a></div><div class="ttdeci">Minitel(PinName txPin, PinName rxPin, PinName resetPin, PinName errorPin)</div><div class="ttdoc">Constructor. </div><div class="ttdef"><b>Definition:</b> Minitel.cpp:3</div></div>
 <div class="ttc" id="class_minitel_html_a0ada4de74f143e73f6b65653b33fb747"><div class="ttname"><a href="class_minitel.html#a0ada4de74f143e73f6b65653b33fb747">Minitel::stopMotors</a></div><div class="ttdeci">void stopMotors()</div><div class="ttdoc">Stop the both motors. </div></div>
 <div class="ttc" id="class_minitel_html_a528a4c6988633a8d0e3e3c910f871792"><div class="ttname"><a href="class_minitel.html#a528a4c6988633a8d0e3e3c910f871792">Minitel::trackLine</a></div><div class="ttdeci">void trackLine(double rate, int rightSensor, int leftSensor)</div><div class="ttdoc">go and track the line </div><div class="ttdef"><b>Definition:</b> Minitel.cpp:19</div></div>
+<div class="ttc" id="class_minitel_html_a28dbb9b02a6a5066dc5dbdb7a0aa69ee"><div class="ttname"><a href="class_minitel.html#a28dbb9b02a6a5066dc5dbdb7a0aa69ee">Minitel::leftMotor</a></div><div class="ttdeci">void leftMotor(int rate)</div><div class="ttdoc">Active the left motor. </div><div class="ttdef"><b>Definition:</b> Minitel.cpp:110</div></div>
 <div class="ttc" id="class_minitel_html_ac4b9e081732573a37532c94812ccdea2"><div class="ttname"><a href="class_minitel.html#ac4b9e081732573a37532c94812ccdea2">Minitel::stopMotorRight</a></div><div class="ttdeci">void stopMotorRight()</div><div class="ttdoc">Stop the right motor. </div></div>
-<div class="ttc" id="class_minitel_html"><div class="ttname"><a href="class_minitel.html">Minitel</a></div><div class="ttdef"><b>Definition:</b> Minitel.h:12</div></div>
+<div class="ttc" id="class_minitel_html"><div class="ttname"><a href="class_minitel.html">Minitel</a></div><div class="ttdoc">Permet de faire rouler le minitel à l&#39;aide d&#39;une qik. </div><div class="ttdef"><b>Definition:</b> Minitel.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Généré le Mardi 23 Septembre 2014 22:26:04 pour Minitel par &#160;<a href="http://www.doxygen.org/index.html">
+Généré le Mercredi 24 Septembre 2014 15:58:10 pour Minitel par &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>

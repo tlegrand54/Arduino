@@ -9,11 +9,21 @@
 #define RMOTEURD -27
 #define RMOTEURG -27
 
+/**
+ * \class Minitel
+ *
+ * \brief Permet de faire rouler le minitel à l'aide d'une qik
+ *
+ */
+
 class Minitel
 {
 private:
     PololuQik2 qik;
-    int cptStack=0, cptPosition=0, angleGo=0;
+    int cptStack=0; /**< */
+    int cptPosition=0; /**< Permet de calculer la position */
+    int angleGo=0; /**< Permet de savoir si on est dans l'angle de la ligne*/
+
 
     void seuilStack(int isLeft);
 
@@ -21,10 +31,10 @@ public:
     /**
      * \brief Constructor 
      *
-     * \param txPin
-     * \param rxPin
-     * \param resetPin
-     * \param errorPin
+     * \param txPin Number of pin TX 
+     * \param rxPin Number of pin RX
+     * \param resetPin Number of pin use for reset the Qik
+     * \param errorPin Number of pin use for know if Qik is default
      */
     Minitel(PinName txPin, PinName rxPin, PinName resetPin, PinName errorPin);
 
@@ -67,6 +77,20 @@ public:
      * \brief Stop the both motors
      */
     void stopMotors();
+
+    /**
+     * \brief Active the right motor
+     *
+     * \param rate
+     */
+    void rightMotor(int rate);
+
+    /**
+     * \brief Active the left motor
+     *
+     * \param rate
+     */
+    void leftMotor(int rate);
 
     /**
      * \brief Destructor

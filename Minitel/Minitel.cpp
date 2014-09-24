@@ -98,7 +98,17 @@ Minitel::goBackward(double rate,int sensorRight,int sensorLeft)
 
 Minitel::go(int rate)
 {
+    rightMotor(rate);
+    leftMotor(rate);
+}
+
+Minitel::rightMotor(int rate)
+{
     qik.setMotor0Speed((int)AMOTEURD*rate);
+}
+
+Minitel::leftMotor(int rate)
+{
     qik.setMotor1Speed((int)AMOTEURG*rate);
 }
 
