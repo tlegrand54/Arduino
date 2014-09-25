@@ -1,7 +1,7 @@
 #include <Servo.h> 
 
 Servo myservo;  
-Servo myservo2;
+//Servo myservo2;
 
 int pos = 0; 
 int i = 0;
@@ -12,10 +12,10 @@ int i = 0;
 void setup()
 { 
   myservo.attach(9);   
-  myservo2.attach(10);
+  //myservo2.attach(10);
 
   myservo.write(10);
-  myservo2.write(0);
+  //myservo2.write(0);
 } 
 
 
@@ -25,8 +25,8 @@ void loop()
   {
     myservo.write(i);
     delay(10);
-    myservo2.write(100-i);
-    delay(10);
+    //myservo2.write(100-i);
+    //delay(10);
   }
   
   delay(10);
@@ -35,8 +35,8 @@ void loop()
   {
     myservo.write(i);
     delay(10);
-    myservo2.write(100-i);
-    delay(10);
+    //myservo2.write(100-i);
+    //delay(10);
   }
   
   delay(10);
