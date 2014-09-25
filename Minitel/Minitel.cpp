@@ -1,11 +1,12 @@
 #include "Minitel.h"
+#include "PololuQik2/PololuQik2.h"
 
 Minitel::Minitel(PinName TxPin, PinName RxPin, PinName ResetPin, PinName ErrorPin)
 {
     /*
      * Instanciation de la qik
      */
-    qik = new PololuQik2(TxPin, RxPin, ResetPin, ErrorPin, NULL, true);
+    qik(TxPin, RxPin, ResetPin, ErrorPin, NULL, true);
 
     /*
      * Initialisation de la qik
@@ -16,7 +17,7 @@ Minitel::Minitel(PinName TxPin, PinName RxPin, PinName ResetPin, PinName ErrorPi
     } while(qik.hasFrameError() || qik.hasDataOverrunError() || qik.hasTimeoutError());
 }
 
-Minitel::trackLine(double rate,int sensorRight,int sensorLeft)
+void Minitel::trackLine(double rate,int sensorRight,int sensorLeft)
 {
     printf("\r%f : Avance\n", timeEnd.read());
 
@@ -56,7 +57,7 @@ Minitel::trackLine(double rate,int sensorRight,int sensorLeft)
     }    
 }
 
-Minitel::goBackward(double rate,int sensorRight,int sensorLeft)
+void Minitel::goBackward(double rate,int sensorRight,int sensorLeft)
 {
     printf("\r%f : Reculer\n", timeEnd.read());
 
@@ -96,23 +97,23 @@ Minitel::goBackward(double rate,int sensorRight,int sensorLeft)
     }
 }
 
-Minitel::go(int rate)
+void Minitel::go(int rate)
 {
     rightMotor(rate);
     leftMotor(rate);
 }
 
-Minitel::rightMotor(int rate)
+void Minitel::rightMotor(int rate)
 {
     qik.setMotor0Speed((int)AMOTEURD*rate);
 }
 
-Minitel::leftMotor(int rate)
+void Minitel::leftMotor(int rate)
 {
     qik.setMotor1Speed((int)AMOTEURG*rate);
 }
 
-Minitel::seuilStack(int isLeft)
+void Minitel::seuilStack(int isLeft)
 {
     if(cptStack >= 0 && isLeft)
     {
@@ -132,3 +133,7 @@ Minitel::seuilStack(int isLeft)
     }
 }
 
+void Minitel::endMatch()
+{
+    timeEnd.start();
+}
