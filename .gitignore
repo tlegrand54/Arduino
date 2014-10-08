@@ -1,6 +1,7 @@
 .d
-LPC176x/
+LPC*
 *.bin
 *.hex
 *.elf
 Makefile
+makefile
