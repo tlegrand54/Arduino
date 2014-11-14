@@ -1,32 +1,58 @@
 /*
-  Blink
-  Turns on an LED on for one second, then off for one second, repeatedly.
-
-  Most Arduinos have an on-board LED you can control. On the Uno and
-  Leonardo, it is attached to digital pin 13. If you're unsure what
-  pin the on-board LED is connected to on your Arduino model, check
-  the documentation at http://arduino.cc
-
-  This example code is in the public domain.
-
-  modified 8 May 2014
-  by Scott Fitzgerald
+  Code Initiation
+  
+  switch les leds de on à off
  */
-
-
-// the setup function runs once when you press reset or power the board
-void setup() {
-  // initialize digital pin 13 as an output.
-  pinMode(13, OUTPUT);
-  pinMode(12, OUTPUT);
-  pinMode(11, OUTPUT);
-  pinMode(10, OUTPUT);
-  pinMode(9, INPUT);
+ 
+volatile boolean sens = false; /**< Détermine le sens du chenillard */
+ 
+/**
+ * \brief SETUP
+ *         Boucle d'initialisation des I/O et autres fonctions du programme
+ */ 
+void setup()
+{ 
+  for(int i = 6; i<14;i++) /**< Initialisation des pins en sortie */
+  {
+    pinMode(i,OUTPUT);
+  }
+  
+  attachInterrupt(0,changeSens,RISING); /**< Création de l'intérruption */
 }
 
+/**
+ * \brief LOOP
+ *         Boucle principale du programme, boucle infinie
+ */
+void loop() 
+{
+  if(sens)
+  {
+     for(int i = 6; i< 14; i++) 
+     { 
+        activate(i);
+        delay(100);
+     }
+  }
+  else
+  {
+    for(int i = 13; i > 5; i--) 
+     { 
+        activate(i);
+        delay(100);
+     }
+  }
+}
+
+
+/**
+ * \brief ACTIVATE
+ *         Boucle permettant d'allumer les leds dans n'importe quel sens
+ */
 void activate(int i) {
   int j;
-  for(j = 10; j < 14; j++){
+  for(j = 6; j < 14; j++)
+  {
     if(i == j)
       digitalWrite(j, HIGH);      
     else
@@ -34,15 +60,11 @@ void activate(int i) {
   }
 }
 
-// the loop function runs over and over again forever
-void loop() {
-  int x = digitalRead(9);
-  int i;
-  if(x == HIGH) {
-    for(i = 10; i< 14; i++) { 
-      activate(i);
-      delay(100);
-    }
-    activate(0);
-  }
+/**
+ * \brief CHANGESENS
+ *         Boucle exécuté quand l'Arduino détecte une interruption matériel
+ */
+void changeSens()
+{
+  sens = !sens;
 }
