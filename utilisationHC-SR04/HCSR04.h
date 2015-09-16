@@ -3,35 +3,39 @@
 
 #include "Arduino.h"
 
-Public class HCSR04{
-    Private :
+class HCSR04{
+private :
 
-    const byte m_nPinTrigger = 0;
-    const byte m_nPinEcho = 0;
+	 byte m_byPinEcho;
+	 byte m_byPinTrigger;
+	
+	/**
+	 * \brief send a trigger for receive the distance between the sensor and an obstacle
+	 */
+	void sendTrigger();
+	
+public:
 
-    /**
-     *  \brief send a trigger for receive a distance
-     */
-    void sendTrigger();
+	/**
+	 * \brief Constructor
+	 * \param p_nPinTrigger is the number of the pin for send the trigger
+	 * \param p_nPinEcho is the number of the pin for receive the distance
+	 */
+	HCSR04(byte p_byPinEcho, byte p_byPinTrigger);
+	
+	/**
+	 * \brief calcul the distance between the sensor and an obstacle
+	 * \return return the distance
+	 */
+	float calculDistance();
 
-    Public :
-
-    /**
-     * \brief Constructor
-     *
-     * \param p_nPinTrigger number of the pin for send the trigger
-     * \param p_nPinEcho number of the pin for receive the distance
-     */
-    HCSR04(byte p_nPinTrigger, byte p_nPinEcho);
-    
-    /**
-     * \brief calcul the distance with an obstacle
-     * 
-     * \return it's the distance with an obstacle
-     */
-     float calculDistance();
+ /**
+  * \brief Enable to know if an obstacle is present
+  * \param p_sNCapture define the numbre of capture 
+  * \param p_sLimite define the limit for say if there is an obstacle
+  * \param p_sInterval interval between two calculDistance
+  * \return True if an obstacle is present otherwise False
+  */
+  bool isObstacle(short p_sNCapture, short p_sLimite, short p_sInterval);
 };
-
 #endif
-
-
